@@ -1,6 +1,6 @@
 # 📚 Language Learning Journal
 
-Daily reading tracker for French (professional level) and English — one article per day, key expressions, personal summaries.
+Daily reading tracker — one article per day, key expressions, personal summaries.
 
 **Started:** March 2026  
 **Goal:** 1 article/day · 30–60 min commute · professional & cultural register
@@ -9,12 +9,12 @@ Daily reading tracker for French (professional level) and English — one articl
 
 ## Progress
 
-| Week | FR articles | EN articles | Words saved |
-|------|------------|------------|-------------|
+| Week | FR | EN | Expressions |
+|------|----|----|-------------|
 | Week 1 | 0/4 | 0/3 | 0 |
 | Week 2 | 0/4 | 0/3 | 0 |
 
-> Update this table manually each week, or run `python stats.py` to generate it automatically.
+Run `python stats.py` to update this automatically.
 
 ---
 
@@ -22,60 +22,53 @@ Daily reading tracker for French (professional level) and English — one articl
 
 ```
 language-learning/
-├── README.md             ← this file (progress overview)
-├── fr/                   ← French articles
+├── README.md          ← this file
+├── fr/                ← French articles (one .md per day)
 │   └── YYYY-MM-DD.md
-├── en/                   ← English articles
+├── en/                ← English articles (one .md per day)
 │   └── YYYY-MM-DD.md
-├── vocabulary.md         ← master vocabulary list (all expressions)
-└── stats.py              ← optional script to generate stats
+├── vocabulary.md      ← master list of all saved expressions
+├── new_day.sh         ← creates today's file automatically
+├── TEMPLATE.md        ← blank entry template
+└── stats.py           ← progress summary script
 ```
 
 ---
 
-## How to add a new entry
+## Daily workflow
 
-1. Create a file in `fr/` or `en/` named with today's date: `2026-03-26.md`
-2. Use the template below
-3. Commit: `git add . && git commit -m "day 1 - Le Monde - déficit public"`
+```bash
+# 1. Create today's file
+./new_day.sh fr          # or: ./new_day.sh en
+
+# 2. Fill in the article, summary, and expressions in your editor
+
+# 3. Add your best expressions to vocabulary.md
+
+# 4. Commit
+git add . && git commit -m "day 3 - Les Echos - croissance française"
+```
+
+That's it. The whole thing takes 5 minutes after your reading session.
 
 ---
 
-## Entry template
+## Entry format
+
+Each file follows this structure:
 
 ```markdown
-## [Title of article](url)
+## [Title](url)
+**Source:** ...
+**Date:** YYYY-MM-DD
+**Theme:** ...
 
-**Source:** Le Monde / The Economist / etc.  
-**Date:** YYYY-MM-DD  
-**Theme:** Politics / Economy / Culture / Society  
-**Difficulty:** ⭐ easy · ⭐⭐ medium · ⭐⭐⭐ challenging
-
----
-
-### My summary (in my own words)
-
-<!-- 3–5 sentences, no copy-paste from the article -->
-
----
+### Summary
+3–5 sentences in your own words.
 
 ### Key expressions
-
-| Expression | Meaning / context |
+| Expression | Meaning |
 |---|---|
-| expression 1 | definition |
-| expression 2 | definition |
-| expression 3 | definition |
-
----
-
-### Notes
-
-<!-- Anything worth remembering: tone, argument structure, style -->
+| ... | ... |
 ```
 
----
-
-## Vocabulary index
-
-All saved expressions are compiled in [`vocabulary.md`](./vocabulary.md).
