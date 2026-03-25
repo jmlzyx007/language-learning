@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 📚 Language Learning Journal
 
 Daily reading tracker for French (professional level) and English — one article per day, key expressions, personal summaries.
@@ -80,3 +81,7 @@ language-learning/
 
 All saved expressions are compiled in [`vocabulary.md`](./vocabulary.md).
 
+=======
+# language-learning
+My language learning tracker
+>>>>>>> 1fd19655409b02d8649d08d7be6aa4648d238dea
